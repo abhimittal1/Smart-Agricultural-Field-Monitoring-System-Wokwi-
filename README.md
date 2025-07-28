@@ -57,8 +57,7 @@ The Smart Agricultural Field Monitoring System is a comprehensive IoT solution d
 
 The complete circuit implementation showing all component connections and wiring:
 
-![Circuit Diagram](<img width="956" height="723" alt="image" src="https://github.com/user-attachments/assets/1d5c43d7-ee40-47b7-a0d1-e7e527f9e10b" />
-)
+![Circuit Diagram](circuit_diagram.png)
 
 *Figure 1: Complete circuit schematic showing ESP32 connections to all sensors and actuators*
 
@@ -183,7 +182,7 @@ if (irrigating) {
 ### Real-time Data Output
 The system continuously logs sensor data in CSV format for easy analysis and integration:
 
-![System Output](images/system_output.png)
+![System Output](Result_image.png)
 
 *Figure 2: Serial monitor output showing real-time sensor readings and system dashboard*
 
