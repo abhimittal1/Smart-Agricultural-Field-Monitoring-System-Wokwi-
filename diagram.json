@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "Simple Agricultural Monitor",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-soil-moisture-sensor", "id": "soil1", "top": -96, "left": 200, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": -48, "left": 350, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": 50, "left": 350, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 150, "left": 350, "attrs": {} },
+    { "type": "wokwi-led", "id": "red", "top": -50, "left": 150, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "green", "top": 0, "left": 150, "attrs": { "color": "green" } },
+    { "type": "wokwi-buzzer", "id": "buzzer1", "top": 50, "left": 150, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 100, "left": 150, "attrs": { "color": "blue" } },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 150, "left": 150, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r1", "top": -20, "left": 300, "attrs": { "value": "10000" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    
+    [ "esp:3V3", "soil1:VCC", "red", [ "h180" ] ],
+    [ "esp:GND.1", "soil1:GND", "black", [ "h180" ] ],
+    [ "esp:A0", "soil1:AO", "orange", [ "h180" ] ],
+    
+    [ "esp:3V3", "ldr1:VCC", "red", [ "h330" ] ],
+    [ "ldr1:AO", "esp:A3", "orange", [ "v20", "h-230" ] ],
+    [ "ldr1:AO", "r1:1", "orange", [ "v-28" ] ],
+    [ "r1:2", "esp:GND.1", "black", [ "v20", "h-230" ] ],
+    
+    [ "esp:5V", "ultrasonic1:VCC", "red", [ "h330", "v50" ] ],
+    [ "esp:GND.2", "ultrasonic1:GND", "black", [ "h330", "v70" ] ],
+    [ "esp:D18", "ultrasonic1:TRIG", "green", [ "h310", "v70" ] ],
+    [ "esp:D19", "ultrasonic1:ECHO", "blue", [ "h290", "v80" ] ],
+    
+    [ "esp:5V", "servo1:V+", "red", [ "h330", "v150" ] ],
+    [ "esp:GND.2", "servo1:GND", "black", [ "h330", "v170" ] ],
+    [ "esp:D13", "servo1:PWM", "orange", [ "h290", "v180" ] ],
+    
+    [ "esp:D25", "red:A", "red", [ "h130", "v-50" ] ],
+    [ "red:C", "esp:GND.1", "black", [ "v30", "h-130" ] ],
+    
+    [ "esp:D26", "green:A", "green", [ "h130" ] ],
+    [ "green:C", "esp:GND.1", "black", [ "v20", "h-130" ] ],
+    
+    [ "esp:D14", "buzzer1:1", "purple", [ "h130", "v50" ] ],
+    [ "buzzer1:2", "esp:GND.1", "black", [ "v-30", "h-130" ] ],
+    
+    [ "btn1:1.l", "esp:D12", "blue", [ "h-30", "v-80" ] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [ "h-30", "v-60" ] ],
+    
+    [ "esp:3V3", "pot1:VCC", "red", [ "h130", "v150" ] ],
+    [ "esp:GND.1", "pot1:GND", "black", [ "h130", "v170" ] ],
+    [ "esp:A6", "pot1:SIG", "orange", [ "h110", "v190" ] ]
+  ],
+  "dependencies": {}
+}
