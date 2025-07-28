@@ -336,7 +336,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact & Support
 
-- **Project Maintainer**: Abhishek Mittal(mailto:abhishekmittal24gold@gmail.com)
+- **Project Maintainer**: Abhishek Mittal (abhishekmittal24gold@gmail.com)
 
 
 ---
