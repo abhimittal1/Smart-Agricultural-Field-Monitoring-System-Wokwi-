@@ -9,6 +9,9 @@
 
 The Smart Agricultural Field Monitoring System is a comprehensive IoT solution designed to revolutionize modern farming practices. This system continuously monitors essential environmental parameters and automatically manages irrigation to ensure optimal crop growth while conserving water resources.
 
+### Project Working
+[Click here to watch the demo video](./demo.mp4)
+
 ### 🌟 Key Features
 
 - **🔍 Real-time Monitoring**: Continuous tracking of soil moisture, light levels, and water tank status
